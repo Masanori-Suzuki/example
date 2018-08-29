@@ -1,0 +1,22 @@
+{% load static %}
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Firebase Demo</title>
+</head>
+<body>
+  <a href="{% url 'index' %}">index</a><br>
+  <h1>UID一覧</h1>
+  <table>
+    <tr>
+      <th>ID</th>
+    </tr>
+    {% for uid in list %}
+    <tr>
+      <td><a href="{% url 'details' uid=uid %}">{{uid}}</a></td>
+    </tr>
+    {% endfor %}
+  </table>
+</body>
+</html>
